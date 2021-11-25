@@ -8,8 +8,8 @@ export default function ChatMenu() {
     const open = Boolean(anchorEl);
   const ClearChat= () => {
     axios.delete('/messages/delete').then((response) =>{
-        setMessages(response.data)
-      })
+        setUsername(prompt('Chat Cleared...!'));
+    })
   }
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
