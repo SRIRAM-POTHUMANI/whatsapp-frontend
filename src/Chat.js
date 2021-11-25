@@ -8,16 +8,24 @@ function Chat({ messages, name }) {
   const msgsender = "chat_reciever chat_message ";
   const msgreciever = "chat_message";
   const [input, setinput] = useState([]);
-    const sendMessage=(e)=>{
+  // const [newmessages, setnewMessages]= useState([]); 
+  // setnewMessages(messages);
+    const sendMessage= async(e)=>{
       e.preventDefault();
-        axios.post('/messages/new',{
+        await axios.post('/messages/new',{
           message: input,
           name: name,
           timestamp: "justnow",
           recieved: true
         });
         setinput("");
+        // await axios.get('/messages/sync').then((response) =>{
+        //   setnewMessages(response.data)
+        // })
     };
+    // console.log(messages);
+    // console.log(newmessages);
+
   return (
     <div className="chat">
       <div className="chat_header">
