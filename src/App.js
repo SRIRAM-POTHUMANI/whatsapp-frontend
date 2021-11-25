@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     var pusher = new Pusher('fbea830eb5fa8b8ee57d', {
       cluster: 'ap2'
-    });
+    }); 
 console.log(messages)
     var channel = pusher.subscribe('messages');
     channel.bind('inserted', (newMessage) => {
