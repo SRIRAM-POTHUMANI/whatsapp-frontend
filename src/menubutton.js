@@ -7,7 +7,7 @@ export default function ChatMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
   const ClearChat= () => {
-    axios.delete('/messages/sync').then((response) =>{
+    axios.delete('/messages/delete').then((response) =>{
         setMessages(response.data)
       })
   }
