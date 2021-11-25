@@ -1,25 +1,18 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import { SearchOutlined, AttachFile, MoreVert,InsertEmoticon, MicNone } from "@material-ui/icons";
 import axios from "./axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Chat.css";
 
 function Chat({ messages, name }) {
   const [input, setinput] = useState([]);
-  const [findname, setfindname] = useState([])
-  useEffect(()=>{
-    axios.get('/messages/name').then((response) =>{
-      setfindname(response.data)
-    })
-},[])
-  const recieved = findname == null ? false : true;
     const sendMessage=(e)=>{
       e.preventDefault();
         axios.post('/messages/new',{
           message: input,
           name: name,
           timestamp: "justnow",
-          recieved: recieved
+          recieved: true
         });
         setinput("");
     };
