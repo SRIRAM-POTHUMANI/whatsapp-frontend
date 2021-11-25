@@ -1,10 +1,12 @@
-import { Avatar, IconButton } from "@material-ui/core";
+import { Avatar, IconButton,Button,Menu, MenuItem, Fade } from "@material-ui/core";
 import { SearchOutlined, AttachFile, MoreVert,InsertEmoticon, MicNone } from "@material-ui/icons";
 import axios from "./axios";
 import React, { useState } from "react";
 import "./Chat.css";
-
+import ChatMenu from "./menubutton";
 function Chat({ messages, name }) {
+  const msgsender = "chat_reciever chat_message ";
+  const msgreciever = "chat_message";
   const [input, setinput] = useState([]);
     const sendMessage=(e)=>{
       e.preventDefault();
@@ -32,16 +34,17 @@ function Chat({ messages, name }) {
             <AttachFile />
           </IconButton>
           <IconButton>
-            <MoreVert />
+            <ChatMenu />
           </IconButton>
         </div>
       </div>
       <div className="chat_body">
-        {messages.map(message => (
-          <p className={`chat_message ${message.recieved && "chat_reciever"}`}>
-          <span className="chat_name">{message.name}</span>
-          {message.message}
-                    <span className="chat_timestamp">{message.timestamp}</span>
+        {messages.map(msg => (
+          // let isUser = (name === message.name); 
+          <p className={(name === msg.name) ? msgsender : msgreciever}>
+          <span className="chat_name">{msg.name}</span>
+          {msg.message}
+                    <span className="chat_timestamp">{msg.timestamp}</span>
         </p>
         ))}
       </div>
