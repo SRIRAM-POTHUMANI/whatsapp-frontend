@@ -29,7 +29,7 @@ function App() {
   }
   useEffect(() => {
    sync()
-  },  [])
+  })
   
 //pusher
   useEffect(() => {
@@ -38,10 +38,10 @@ function App() {
       sync()
     });
 
-    // return ()=>{
-    //       channel.unbind_all();
-    //       channel.unsubscribe();
-        // };
+    return ()=>{
+          channel.unbind_all();
+          channel.unsubscribe();
+        };
    },  [messages])
   
   // useEffect(()=>{
