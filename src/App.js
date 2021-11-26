@@ -2,8 +2,9 @@ import './App.css';
 import Chat from './Chat';
 import Sidebar from './Sidebar';
 import Pusher from "pusher-js";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import axios from './axios';
+import scrollToBottom from './Chat';
 
 function App() {
   const [username, setUsername] = useState('')
@@ -14,12 +15,16 @@ function App() {
     cluster: 'ap2'
   }); 
   const [messages, setMessages]= useState([]); 
-
+  const messagesEndRef = useRef(null)
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
   const  sync = async ()=> {
     await axios.get('/messages/sync')
     .then((res)=>{
       console.log(res.data);
       setMessages(res.data)
+      scrollToBottom()
     })
   }
   useEffect(() => {

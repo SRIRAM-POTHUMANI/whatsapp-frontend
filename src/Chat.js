@@ -1,13 +1,18 @@
 import { Avatar, IconButton } from "@material-ui/core";
 import { SearchOutlined, AttachFile,InsertEmoticon, MicNone } from "@material-ui/icons";
 import axios from "./axios";
-import React, { useState } from "react";
+import React, { useState, useRef  } from "react";
 import "./Chat.css";
 import ChatMenu from "./menubutton";
 function Chat({ messages, name }) {
   const msgsender = "chat_reciever chat_message ";
   const msgreciever = "chat_message";
   const [input, setinput] = useState([]);
+  const messagesEndRef = useRef(null)
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
   // const [newmessages, setnewMessages]= useState([]); 
   // setnewMessages(messages);
     const sendMessage= async(e)=>{
@@ -19,6 +24,7 @@ function Chat({ messages, name }) {
           recieved: true
         });
         setinput("");
+        scrollToBottom()
         // await axios.get('/messages/sync').then((response) =>{
         //   setnewMessages(response.data)
         // })
@@ -46,7 +52,7 @@ function Chat({ messages, name }) {
           </IconButton>
         </div>
       </div>
-      <div className="chat_body">
+      <div className="chat_body" ref={() => {    scrollToBottom() }}>
         {messages.map(msg => (
           // let isUser = (name === message.name); 
           <p className={(name === msg.name) ? msgsender : msgreciever}>
@@ -55,6 +61,7 @@ function Chat({ messages, name }) {
                     <span className="chat_timestamp">{msg.timestamp}</span>
         </p>
         ))}
+              <div ref={messagesEndRef} />
       </div>
       <div className="chat_footer">
             <InsertEmoticon />
