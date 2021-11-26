@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     setUsername(prompt('Please enter your name'));
   }, []) 
-  const pusher = new Pusher('fbea830eb5fa8b8ee57d', {
+  const pusher = new Pusher('f9888cea6103efd008ed', {
     cluster: 'ap2'
   }); 
   const [messages, setMessages]= useState([]); 
