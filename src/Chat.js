@@ -4,7 +4,7 @@ import axios from "./axios";
 import React, { useState, useRef  } from "react";
 import "./Chat.css";
 import ChatMenu from "./menubutton";
-function Chat({ messages, name }) {
+function Chat({ messages, name, toName }) {
   const msgsender = "chat_reciever chat_message ";
   const msgreciever = "chat_message";
   const [input, setinput] = useState([]);
@@ -20,6 +20,7 @@ function Chat({ messages, name }) {
         await axios.post('/messages/new',{
           message: input,
           name: name,
+          toname: toName,
           timestamp: "justnow",
           recieved: true
         });
@@ -37,7 +38,7 @@ function Chat({ messages, name }) {
       <div className="chat_header">
         <Avatar />
         <div className="chat_headerinfo">
-          <h3> Room name</h3>
+          <h3> {toName}</h3>
           <p>Last seen at ...</p>
         </div>
         <div className="chat_headerright">

@@ -8,8 +8,10 @@ import scrollToBottom from './Chat';
 
 function App() {
   const [username, setUsername] = useState('')
+  const [recievername, setrecievername] = useState('')
   useEffect(() => {
     setUsername(prompt('Please enter your name'));
+    setrecievername(prompt('Please enter to name'));
   }, []) 
   const pusher = new Pusher('f9888cea6103efd008ed', {
     cluster: 'ap2'
@@ -69,7 +71,7 @@ function App() {
       {/* {sidebar} */}
       <Sidebar />
       {/* {chat window} */}
-      <Chat messages={messages} name={username} />
+      <Chat messages={messages} name={username} toName={recievername} />
       </div>
     </div>
   );
