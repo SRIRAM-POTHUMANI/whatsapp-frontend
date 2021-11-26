@@ -26,12 +26,13 @@ function App() {
    sync()
   },  [])
   
-
+//pusher
   useEffect(() => {
     const channel = pusher.subscribe('messages');
     channel.bind('inserted', function(newMessage) {
       sync()
     });
+
     return ()=>{
           channel.unbind_all();
           channel.unsubscribe();
