@@ -1,17 +1,11 @@
 import { Menu, MenuItem, Fade } from "@material-ui/core";
 import { MoreVert } from "@material-ui/icons";
-import axios from "./axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function ChatMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
      const ClearChat= {}
-    //     useEffect(() => {
-    //     axios.delete('/messages/delete').then((response) =>{
-    //     console.warn('Chat Cleared...!');
-    //     })
-    // }, [])
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };

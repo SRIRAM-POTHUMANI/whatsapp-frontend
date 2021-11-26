@@ -1,5 +1,5 @@
-import { Avatar, IconButton,Button,Menu, MenuItem, Fade } from "@material-ui/core";
-import { SearchOutlined, AttachFile, MoreVert,InsertEmoticon, MicNone } from "@material-ui/icons";
+import { Avatar, IconButton } from "@material-ui/core";
+import { SearchOutlined, AttachFile,InsertEmoticon, MicNone } from "@material-ui/icons";
 import axios from "./axios";
 import React, { useState } from "react";
 import "./Chat.css";
