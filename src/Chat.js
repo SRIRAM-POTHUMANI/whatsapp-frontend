@@ -38,12 +38,6 @@ function Chat({ messages, name, toName }) {
   return (
     
     <div className="chat"> 
-    {
-      useEffect(() => {
-        {scrollToBottom()}
-      
-      })
-    }
       <div className="chat_header">
         <Avatar src="https://english.ntvtelugu.com/wp-content/uploads/2021/05/vijay-thalapathy-keerthy-suresh-telugu-film.jpeg"/>
         <div className="chat_headerinfo">
