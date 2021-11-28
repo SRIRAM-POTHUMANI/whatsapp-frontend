@@ -1,6 +1,7 @@
 import { Menu, MenuItem, Fade } from "@material-ui/core";
 import { MoreVert } from "@material-ui/icons";
 import React from "react";
+import './Chat.css'
 
 export default function ChatMenu() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -16,7 +17,7 @@ export default function ChatMenu() {
   
     return (
       <div>
-        <MoreVert aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}/>
+        <MoreVert aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick} className="emojis"/>
         <Menu
           id="fade-menu"
           anchorEl={anchorEl}

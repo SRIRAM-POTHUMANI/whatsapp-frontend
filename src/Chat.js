@@ -52,13 +52,13 @@ function Chat({ messages, name, toName }) {
         </div>
         <div className="chat_headerright">
           <IconButton>
-            <SearchOutlined />
+            <SearchOutlined className="emojis" />
           </IconButton>
           <IconButton>
-            <AttachFile />
+            <AttachFile className="emojis"/>
           </IconButton>
           <IconButton>
-            <ChatMenu />
+            <ChatMenu className="emojis"/>
           </IconButton>
         </div>
       </div>
