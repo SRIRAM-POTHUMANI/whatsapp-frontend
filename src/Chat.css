@@ -14,13 +14,13 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #c2bfcc0f ; 
+  background: #c2bfcc36 ; 
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2700b31e; 
+  background: #2700b33f; 
 }
 @media (min-width: 1080px) {
   .chat {
