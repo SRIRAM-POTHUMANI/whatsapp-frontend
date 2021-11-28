@@ -25,12 +25,13 @@ function App() {
     await axios.get('/messages/sync')
     .then((res)=>{
       console.log(res.data);
-      setMessages(res.data.filter())
-      scrollToBottom()
+      setMessages(res.data)  
+        
     })
   }
   useEffect(() => {
    sync()
+   scrollToBottom()  
   })
   
 //pusher
@@ -40,10 +41,9 @@ function App() {
       sync()
     });
 
-    // return ()=>{
-    //       channel.unbind_all();
-    //       channel.unsubscribe();
-    //     };
+    return ()=>{
+          channel.unbind_all();
+        };
    },  [messages])
   
   // useEffect(()=>{
