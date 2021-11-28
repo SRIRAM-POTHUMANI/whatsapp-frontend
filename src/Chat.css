@@ -20,7 +20,7 @@
 .chat_body::-webkit-scrollbar-thumb:hover {
   background-clip: linear-gradient(to bottom, #ffffff, #eceafd, #d6d6fc, #bec3fb, #a2b1fa, #a2b1fa, #a2b1fa, #a2b1fa, #bec3fb, #d6d6fc, #eceafd, #ffffff);
 }
-/* @media (min-width: 1080px) {
+@media (min-width: 1080px) {
   .chat {
     display: flex;
     flex-direction: column;
@@ -189,7 +189,7 @@
     padding: 10px;
     color: gray;
   }
-} */
+}
 @media (min-width: 600px) {
   .chat {
     display: flex;
