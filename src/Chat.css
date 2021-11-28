@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lobster&display=swap');
 
-.chat_body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 5px;
 }
-.chat_body::-webkit-scrollbar:hover {
+::-webkit-scrollbar:hover {
   width: 15px;
 }
 /* Track */
@@ -13,13 +13,13 @@
 }
  
 /* Handle */
-.chat_body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #c2bfcc0f ; 
   border-radius: 20px;
 }
 
 /* Handle on hover */
-.chat_body::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #2700b31e; 
 }
 @media (min-width: 1080px) {
